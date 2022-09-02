@@ -24,7 +24,7 @@ find . -name ".DS_Store*" -print 2>/dev/null |  xargs rm
 ```
 #####
 
-## Find and delete files (in case of there is a space in path we should use following)
+## Find and delete files (in case of a space in path we should use)
 ```sh
 #!/bin/sh
 
