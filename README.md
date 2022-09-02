@@ -3,7 +3,7 @@
 ```sh
 #!/bin/sh
 
-find / -name "*hede*"
+find / -name "*hede*" -print 2>/dev/null
 ```
 #####
 
@@ -11,7 +11,7 @@ find / -name "*hede*"
 ```sh
 #!/bin/sh
 
-grep -r "hede" *
+grep -r "hede" * 2>/dev/null
 ```
 #####
 
@@ -19,7 +19,15 @@ grep -r "hede" *
 ```sh
 #!/bin/sh
 
-find . -name ".DS_Store*" |  xargs rm -rf
+find . -name ".DS_Store*" -print 2>/dev/null |  xargs rm 
 
 ```
 #####
+
+## Find and delete files (in case of there is a space in path we should use following)
+```sh
+#!/bin/sh
+
+find . -name ".DS_Store*" -exec rm {} + 2>/dev/null 
+
+```
